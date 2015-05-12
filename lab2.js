@@ -23,6 +23,21 @@ function assert(expression, failureMessage) {
   }
 }
 
+function assertDeepEqual(actual, expected, failureMessage) {
+  try {
+    if ( JSON.stringify(actual) !== JSON.stringify(expected) ) {
+      throw new Error( failureMessage );
+    }
+  }
+  catch (err) {
+    console.log('assertion failure: ', err,
+                '\nexpected:', expected,
+                '\nactual:', actual);
+  }
+}
+
+
+
 //*********************************************************
 // PROBLEM 1: The Blob. 20 points
 //*********************************************************
@@ -58,10 +73,10 @@ var hoursSpentInDowington; // TODO: assign me the value of the
 function hoursToOoze(population, peoplePerHour) {
   // TODO: implement me based on the instructions above. Be sure to then assign me to the Blob's prototype.
 }
-
 assert(blob.hoursToOoze(0, 1) === 0, "no people means no time needed.");
 assert(blob.hoursToOoze(1000, 1) === hoursSpentInDowington,
   "hoursSpentInDowington should match hoursToOoze\"s result for 1000");
+
 // TODO: write three more assertions like the two above, testing out
 // the hoursToOoze method.
 
@@ -117,6 +132,12 @@ function lastLetterSort(stringArray) {
   }
   stringArray.sort(byLastLetter);
 }
+
+assertDeepEqual(
+  lastLetterSort( [ 'blue', 'red', 'green' ] ),
+  [ 'red', 'blue', 'green' ],
+  'array not sorted by last letter'
+);
 
 function sumArray(numberArray) {
   var sum = 0;
