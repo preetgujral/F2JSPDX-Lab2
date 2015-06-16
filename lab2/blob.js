@@ -17,7 +17,7 @@
         3          |       4/hour
 
  TODO: First, make a constructor function, called Blob, that makes blobs.
-       It should internally peoplePerHour to 1 on initialization and have a function
+       It should internally (in the constructor) set  this.peoplePerHour to 1 on initialization and have a function
        eatTown that takes a population size and returns the number of
        hours it takes to eat that town! It should also keep track of the
        peoplePerHour increase due to eating the town.
@@ -31,9 +31,20 @@ var Dowington = 1000;
 var Smallsville = 5000;
 var Portland = 500000;
 
-var blob = new Blob();
 
 // Use the eatTown method and console log result:
 // 1) How log for four different blobs to each eat one of the towns
+
+console.log( new Blob().eatTown(Nowhereville) );
+console.log( new Blob().eatTown(Dowington) );
+console.log( new Blob().eatTown(Smallsville) );
+console.log( new Blob().eatTown(Portland) );
+
+
 // 2) How log for the same blob to sequentially eat all four towns!
+var blob = new Blob();
+console.log( blob.eatTown(Nowhereville) );
+console.log( blob.eatTown(Dowington) );
+console.log( blob.eatTown(Smallsville) );
+console.log( blob.eatTown(Portland) );
 
