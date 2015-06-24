@@ -22,27 +22,29 @@ function SentientBeing ( homePlanet, language ) {
 
 // sb is a SentientBeing object
 SentientBeing.prototype.sayHello = function (sb) {
+    console.log( hello[ this.language ] );
     // TODO: say hello prints out (console.log's) hello in the
     // language of the speaker, but returns it in the language
     // of the listener (the sb parameter above).
     // use the 'hello' object at the beginning of this exercise
     // to do the translating
-
-    //TODO: put this on the SentientBeing prototype
+    return hello[ sb.language ];
 }
 
+/* this is the start of Human subclass */
 function Human () {
   SentientBeing.call( this, 'earth', 'federation standard' );
 }
 Human.prototype = Object.create( SentientBeing.prototype );
 Human.prototype.constructor = Human;
+/* this is the end of Human subclass */
 
 var human = new Human();
 
 // TODO: create three subclasses of SentientBeing, one for each
 // species above (Klingon, Human, Romulan).
 
-assert((new Human()).sayHello(new Klingon()) === "nuqneH",
+assert( human.sayHello(new Klingon()) === "nuqneH",
   "the klingon should hear nuqneH");
 // TODO: write five more assertions, to complete all the possible
 // greetings between the three types of sentient beings you created above.
