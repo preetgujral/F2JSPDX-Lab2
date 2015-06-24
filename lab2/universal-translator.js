@@ -13,13 +13,15 @@ var hello = {
 // sentient beings. They have a home planet, a language that they
 // speak, and method called sayHello.
 
-function SentientBeing () {
+function SentientBeing ( homePlanet, language ) {
+  this.homePlanet = homePlanet;
+  this.language = language;
   // TODO: specify a home planet and a language
   // you'll need to add parameters to this constructor
 }
 
 // sb is a SentientBeing object
-function sayHello (sb) {
+SentientBeing.prototype.sayHello = function (sb) {
     // TODO: say hello prints out (console.log's) hello in the
     // language of the speaker, but returns it in the language
     // of the listener (the sb parameter above).
@@ -28,6 +30,14 @@ function sayHello (sb) {
 
     //TODO: put this on the SentientBeing prototype
 }
+
+function Human () {
+  SentientBeing.call( this, 'earth', 'federation standard' );
+}
+Human.prototype = Object.create( SentientBeing.prototype );
+Human.prototype.constructor = Human;
+
+var human = new Human();
 
 // TODO: create three subclasses of SentientBeing, one for each
 // species above (Klingon, Human, Romulan).
