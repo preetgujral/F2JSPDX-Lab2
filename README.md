@@ -4,7 +4,7 @@
 
 1. Make sure you're logged in to your account on GitHub.
 2. Use the link to clone the repo locally:
-3. `git clone https://github.com/martypdx/F2JSPDX-Lab2.git`
+3. `git clone https://github.com/bethadele/F2JSPDX-Lab2.git`
 6. `cd F2JSPDX-Lab2`
 7. `git checkout -b your-github-username`
 7. Run `npm install`.
