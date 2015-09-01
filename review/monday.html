@@ -19,18 +19,45 @@
   //      - a variable that will hold a string
   //    Use console.log to print out the length of the array.
   //    Push the string onto the array.
-  //    Use console.log to pring out the length of the new array.
+  //    Use console.log to print out the length of the new array.
   //    Return the new array.
 
+function makeCoffee (originArray, name) {
+  console.log(originArray.length);
+  originArray.push(name);
+  console.log(originArray.length);
+  return originArray
+}
+
+
   //    Next, call the function and pass in an empty array and a string.
+makeCoffee([],"Blue Mountain")
 
   // 2. Copy your named function, but now make it an anonymous function
+function (originArray, name) {
+  console.log(originArray.length);
+  originArray.push(name);
+  console.log(originArray.length);
+  return originArray
+}
+
   //    that you assign to a variable.
+var coffeeFunction = function (originArray, name) {
+  console.log(originArray.length);
+  originArray.push(name);
+  console.log(originArray.length);
+  return originArray
+}
 
   // 3. Use console.log() to print out your first (named) function,
+console.log(makeCoffee)
   //    and then your second (anonymous) function.
 
+console.log(coffeeFunction)
   //    What's the difference between the two?
+
+/*the named function is processed before the browser starts reading the script. Tne anonymous is only ran when the variable is called*/
+
   //    Let's talk about hoisting.
 
   // 4. Call your anonymous function and store the results in another variable.
